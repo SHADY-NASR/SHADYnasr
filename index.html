@@ -1,20 +1,62 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8">
-<meta name="description" content="Network Engineer | Studying Cloud Engineer">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="Network Engineer | Cloud Engineer">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ENGINEER SHADY NASR</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif}
-body{min-height:100vh;display:flex;justify-content:center;align-items:center;background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);padding:20px}
-.container{position:relative;width:100%;max-width:480px;background:#fff;border-radius:25px;padding:100px 28px 35px;text-align:center;box-shadow:0 10px 30px rgba(0,0,0,.3)}
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+  padding:20px;
+  opacity:0;
+  animation: pageFade 1s ease forwards;
+}
+
+@keyframes pageFade{
+  to{ opacity:1; }
+}
+
+.container{
+  position:relative;
+  width:100%;
+  max-width:420px;
+  background:white;
+  border-radius:25px;
+  padding:90px 20px 30px;
+  text-align:center;
+  box-shadow:0 10px 30px rgba(0,0,0,0.3);
+  transform:translateY(30px);
+  opacity:0;
+  animation: cardSlide 1s ease forwards;
+  animation-delay:0.3s;
+}
+
+@keyframes cardSlide{
+  to{ transform:translateY(0); opacity:1; }
+}
+
 .circle{
   position:absolute;
-  top:-75px;
+  top:-65px;
   left:50%;
   transform:translateX(-50%);
-  width:150px;
-  height:150px;
+  width:130px;
+  height:130px;
   border-radius:50%;
   overflow:hidden;
   border:5px solid white;
@@ -23,34 +65,159 @@ body{min-height:100vh;display:flex;justify-content:center;align-items:center;bac
 }
 
 @keyframes glowPulse{
-  0%{
-    box-shadow:0 0 15px rgba(0,255,200,0.4);
-  }
-  50%{
-    box-shadow:0 0 25px rgba(0,255,200,0.9);
-  }
-  100%{
-    box-shadow:0 0 15px rgba(0,255,200,0.4);
+  0%{ box-shadow:0 0 15px rgba(0,255,200,0.4); }
+  50%{ box-shadow:0 0 25px rgba(0,255,200,0.9); }
+  100%{ box-shadow:0 0 15px rgba(0,255,200,0.4); }
+}
+
+.circle img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+h1{
+  font-size:20px;
+  margin-bottom:5px;
+}
+
+.subtitle{
+  font-size:14px;
+  color:#555;
+  margin-bottom:20px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:8px;
+}
+
+.flag{
+  width:22px;
+  height:15px;
+  border-radius:3px;
+  box-shadow:0 0 5px rgba(0,0,0,0.3);
+  animation: floatFlag 2.5s ease-in-out infinite;
+}
+
+@keyframes floatFlag {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-4px); }
+  100% { transform: translateY(0px); }
+}
+
+.links{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+.link-item{
+  opacity:0;
+  transform:translateY(15px);
+}
+
+.link-item:nth-child(1){ animation: linkFade 0.6s ease forwards; animation-delay:0.6s;}
+.link-item:nth-child(2){ animation: linkFade 0.6s ease forwards; animation-delay:0.8s;}
+.link-item:nth-child(3){ animation: linkFade 0.6s ease forwards; animation-delay:1s;}
+.link-item:nth-child(4){ animation: linkFade 0.6s ease forwards; animation-delay:1.2s;}
+
+@keyframes linkFade{
+  to{
+    opacity:1;
+    transform:translateY(0);
   }
 }
-h1{font-size:24px;margin-bottom:8px}
-.subtitle{font-size:15px;color:#555;margin-bottom:24px}
-.links{display:flex;flex-direction:column;gap:14px}
-.link-item a{display:flex;align-items:center;justify-content:center;padding:15px;border-radius:14px;text-decoration:none;font-size:16px;font-weight:500;color:#111;border:2px solid #2c5364;transition:.3s}
-.link-item a:hover{background:#2c5364;color:#fff}
-.link-item img,.tiktok-icon{width:24px;height:24px;margin-right:8px}
-</style></head><body>
+
+.link-item a{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:12px;
+  border-radius:12px;
+  text-decoration:none;
+  font-size:15px;
+  font-weight:500;
+  color:#111;
+  border:2px solid #2c5364;
+  transition:0.3s ease;
+}
+
+.link-item a:hover{
+  background:#2c5364;
+  color:white;
+  transform:scale(1.03);
+}
+
+.link-item img{
+  width:20px;
+  height:20px;
+  margin-right:8px;
+}
+
+.tiktok-icon{
+  margin-right:8px;
+}
+
+  
+@media(max-width:350px){
+  .container{
+    padding:80px 15px 25px;
+  }
+
+  h1{ font-size:17px; }
+  .subtitle{ font-size:12px; }
+  .link-item a{ font-size:14px; padding:10px; }
+}
+
+</style>
+</head>
+
+<body>
+
 <div class="container">
+
 <div class="circle">
-    <img src="IMG-20260210-WA0001.jpg" alt="Shady Nasr">
+<img src="IMG-20260210-WA0001.jpg" alt="Shady Nasr">
 </div>
+
 <h1>SHADY NASR SAAD</h1>
-<div class="subtitle">Network Engineer | Studying Cloud Engineer</div>
+
+<div class="subtitle">
+Network Security Engineer | Italian Speaker
+<img class="flag" src="https://upload.wikimedia.org/wikipedia/en/0/03/Flag_of_Italy.svg" alt="Italy Flag">
+</div>
+
 <div class="links">
-<div class="link-item"><a href="https://www.facebook.com/shadynasr11" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg">Facebook</a></div>
-<div class="link-item"><a href="https://www.instagram.com/shady_nassr/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png">Instagram</a></div>
-<div class="link-item"><a href="https://www.tiktok.com/@shadynasr.1?_r=1&_t=ZS-940qSZaHhKh" target="_blank"><svg class="tiktok-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.75 2h3.5c.1 1.2.5 2.3 1.3 3.1.8.8 1.9 1.3 3.1 1.3v3.6c-1.6 0-3.2-.5-4.6-1.4v6.6c0 3.3-2.7 6-6 6s-6-2.7-6-6 2.7-6 6-6c.4 0 .8 0 1.2.1v3.7c-.4-.1-.8-.2-1.2-.2-1.3 0-2.3 1-2.3 2.3s1 2.3 2.3 2.3 2.3-1 2.3-2.3V2z"/></svg>TikTok</a></div>
+
+<div class="link-item">
+<a href="https://www.facebook.com/shadynasr11" target="_blank">
+<img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
+Facebook
+</a>
+</div>
+
+<div class="link-item">
+<a href="https://www.instagram.com/shady_nassr/" target="_blank">
+<img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+Instagram
+</a>
+</div>
+
+<div class="link-item">
+<a href="https://www.tiktok.com/@shadynasr.1?_r=1&_t=ZS-940qSZaHhKh" target="_blank">
+<svg class="tiktok-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+<path d="M12.75 2h3.5c.1 1.2.5 2.3 1.3 3.1.8.8 1.9 1.3 3.1 1.3v3.6c-1.6 0-3.2-.5-4.6-1.4v6.6c0 3.3-2.7 6-6 6s-6-2.7-6-6 2.7-6 6-6c.4 0 .8 0 1.2.1v3.7c-.4-.1-.8-.2-1.2-.2-1.3 0-2.3 1-2.3 2.3s1 2.3 2.3 2.3 2.3-1 2.3-2.3V2z"/>
+</svg>
+TikTok
+</a>
+</div>
+
+
 <div class="link-item"><a href="https://www.linkedin.com/in/shady-nasr-247650417/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png">LinkedIn</a></div>
 <div class="link-item"><a href="https://www.credly.com/users/shady-nasr.1e29185d" target="_blank"><img src="credly.png" alt="Credly">Credly</a></div>
-</div></div></body></html>
 
+</div>
+</div>
+
+</body>
+</html>
