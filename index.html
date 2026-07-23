@@ -10,37 +10,27 @@ body{min-height:100vh;display:flex;justify-content:center;align-items:center;bac
 .container{position:relative;width:100%;max-width:480px;background:#fff;border-radius:25px;padding:100px 28px 35px;text-align:center;box-shadow:0 10px 30px rgba(0,0,0,.3)}
 .circle{
   position:absolute;
-  top:-75px;
+  top:-65px;
   left:50%;
   transform:translateX(-50%);
-  width:150px;
-  height:150px;
+  width:130px;
+  height:130px;
   border-radius:50%;
   overflow:hidden;
-  border:5px solid #fff;
-  animation: glowPulse 2s ease-in-out infinite;
+  border:5px solid white;
+  box-shadow:0 0 20px rgba(0,255,200,0.6);
+  animation: glowPulse 2.5s infinite ease-in-out;
 }
 
 @keyframes glowPulse{
   0%{
-    box-shadow:
-      0 0 10px #00ffd5,
-      0 0 20px #00ffd5,
-      0 0 35px rgba(0,255,213,.5);
+    box-shadow:0 0 15px rgba(0,255,200,0.4);
   }
-
   50%{
-    box-shadow:
-      0 0 20px #00ffd5,
-      0 0 40px #00ffd5,
-      0 0 60px rgba(0,255,213,.9);
+    box-shadow:0 0 25px rgba(0,255,200,0.9);
   }
-
   100%{
-    box-shadow:
-      0 0 10px #00ffd5,
-      0 0 20px #00ffd5,
-      0 0 35px rgba(0,255,213,.5);
+    box-shadow:0 0 15px rgba(0,255,200,0.4);
   }
 }
 h1{font-size:24px;margin-bottom:8px}
